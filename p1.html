@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Préstamo de Libros</title>
+    <link rel="stylesheet" type="text/css" href="p1.css">
+    <script src="p1.js"></script>
+</head>
+
+<body>
+    <h1>Formulario de Registro</h1>
+    <form action="http://manolo.webs.uvigo.gal/SINT/P1.php" id="formulario">
+        <label>Nombre y apellido:</label>
+        <input type="text" name="cname" pattern="^[A-Za-zÁáÉéÍíÓóÚúÑñ]{3,} [A-Za-zÁáÉéÍíÓóÚúÑñ]{3,}$"><br><br>
+
+        <label>Login:</label>
+        <input type="text" name="clogin" id="clogin"><br><br>
+
+        <label>Contraseña:</label>
+        <input type="password" name="cpasswd" id="cpasswd"><br><br>
+
+        <label>DNI:</label>
+        <input type="text" name="cdni" id="cdni"><br><br>
+
+        <label>Correo electrónico:</label>
+        <input type="email" name="cemail"><br><br>
+
+        <label>Subir Foto:</label>
+        <input type="file" name="cfile"><br><br>
+
+        <label>Edad:</label><br>
+        <input type="radio" name="cage" value="menor25">Menor de 25<br>
+        <input type="radio" name="cage" value="25-40">Entre 25 y 40<br>
+        <input type="radio" name="cage" value="40-60">Entre 40 y 60<br>
+        <input type="radio" name="cage" value="mayor60">Mayor de 60<br><br>
+
+        <label>Géneros Literarios:</label><br>
+        <input type="checkbox" name="cgenre[]" value="historia">Historia<br>
+        <input type="checkbox" name="cgenre[]" value="ensayo">Ensayo<br>
+        <input type="checkbox" name="cgenre[]" value="cienciaficcion">Ciencia Ficción<br>
+        <input type="checkbox" name="cgenre[]" value="poesia">Poesía<br>
+        <input type="checkbox" id="marcar" onclick="marcarTodos(this)">Marcar todos<br>
+        <input type="checkbox" id="desmarcar" onclick="desmarcarTodos(this)">Desmarcar todos<br><br>
+
+        <label>Comentario:</label><br>
+        <textarea name="ccomment" rows="4" cols="50"></textarea><br><br>
+
+        <label>Tipo de Soporte:</label>
+        <select name="csoporte">
+            <option value="libro">libro</option>
+            <option value="cd">CD</option>
+            <option value="dvd">DVD</option>
+        </select><br><br>
+
+        <input type="hidden" name="cbrowser" id="cbrowser">
+
+        <label>Método de envío:</label>
+        <select name="cmethod" id="cmethod">
+            <option value="GET">GET</option>
+            <option value="POST">POST</option>
+        </select><br>
+
+        <label>Tipo de codificación:</label>
+        <select name="cencoding" id="cencoding">
+            <option value="application/x-www-form-urlencoded">application/x-www-form-urlencoded</option>
+            <option value="multipart/form-data">multipart/form-data</option>
+        </select><br><br>
+
+        <input class="boton" type="reset" value="Restablecer">
+        <input class="boton" type="submit" value="Enviar" onclick="return enviar()">
+    </form>
+
+    <p>Aarón Riveiro Vilar - Práctica 1 SINT 2023</p>
+</body>
+
+</html>
